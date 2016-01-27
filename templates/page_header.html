@@ -1,0 +1,17 @@
+<div class="back"></div>
+<div class="left"></div>
+<div class="right"></div>
+<div class="content">
+    <div class="top_nav_link">
+        <a href="search.php" class="fl_l">сотрудники</a>
+        {if $auth->login == root       }<a href="search.php?list=journal" class="fl_l">журналы</a> {/if}
+        {if in_array(2, $auth->groups) }<a href="search.php?list=publication" class="fl_l">публикации</a> {/if}
+        {if in_array(2, $auth->groups) }<a href="search.php?list=intellectobj" class="fl_l">ОИС</a> {/if}
+        {if in_array(2, $auth->groups) }<a href="search.php?list=izdania" class="fl_l">Издания</a> {/if}
+        {if in_array(2, $auth->groups) || $auth->login == root  && in_array(3, $auth->groups) }<a href="search.php?list=conference" class="fl_l">конференции</a>{/if}
+        {if in_array(2, $auth->groups) }<a href="search.php?list=confparty" class="fl_l">выступления</a>{/if}
+        <!-- <a href="search.php?list=grant" class="fl_l">гранты</a> -->
+        <!-- <a href="thesis.php" class="fl_r">войти</a> -->
+        <a href="login.php?logout=1" class="exit fl_r">выход</a>
+    </div>
+</div>

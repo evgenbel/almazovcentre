@@ -3,16 +3,18 @@ $(document).ready(function() {
 		var form = $(this);
 
 		$(form).submit( function() {
-			$(form).find("input:gt(0)").each( function() {
-				if(!$(this).val()) {
-					$(this).removeAttr("name");
-				}
-			});
-			$(form).find("select").each(function() {
-				if($(this).val() == 0) {
-					$(this).removeAttr("name");
-				}
-			});
+            if ($(form).attr("action")==''){
+                $(form).find("input:gt(0)").each( function() {
+                    if(!$(this).val()) {
+                        $(this).removeAttr("name");
+                    }
+                });
+                $(form).find("select").each(function() {
+                    if($(this).val() == 0) {
+                        $(this).removeAttr("name");
+                    }
+                });
+            }
 		});
 
 		$(form).find(".button_clear_form").click( function() {
